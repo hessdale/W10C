@@ -37,7 +37,5 @@ function be_black_space(details) {
         details[`target`][`style`][`backgroundColor`] = `black`;
     }
 };
-be_black_space(bodyhtml);
-
+//using ecent listener to look for keydown and hcange background to black on spacebar
 bodyhtml.addEventListener(`keydown`, be_black_space);
-
