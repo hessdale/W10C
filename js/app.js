@@ -39,3 +39,39 @@ function be_black_space(details) {
 };
 //using ecent listener to look for keydown and hcange background to black on spacebar
 bodyhtml.addEventListener(`keydown`, be_black_space);
+//defining a function to change body background color back to white if its black
+function be_white_body() {
+
+    if (bodyhtml.style.backgroundColor = `black`) {
+        bodyhtml.style.backgroundColor = `white`;
+    }
+}
+//using a timing interval to set body background color back to white after 2 seconds
+setInterval(be_white_body, 2000);
+
+//setting a function to color background of body html to blue
+function be_blue_body() {
+    bodyhtml.style.backgroundColor = `blue`;
+}
+//using setTimeout to change background color of body to blue after 15 seconds of page loading
+setTimeout(be_blue_body, 15000);
+
+//defining variable last_id
+let last_id = document.getElementById(`last_id`)
+
+function getRandomCoord(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+let random_X = getRandomCoord(-screenX, screenX);
+let random_Y = getRandomCoord(-screenY, screenY);
+
+function move_last() {
+    let last_id = document.getElementById(`last_id`);
+
+    last_id.style.transform = `translate(${random_X}px,${random_Y}px)`;
+}
+
+
+
+setInterval(move_last, 3000);
