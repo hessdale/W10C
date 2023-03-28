@@ -57,21 +57,17 @@ function be_blue_body() {
 setTimeout(be_blue_body, 15000);
 
 //defining variable last_id
-let last_id = document.getElementById(`last_id`)
-
-function getRandomCoord(min, max) {
+let last_id = document.getElementById(`last_id`);
+//creating a function for X and Y axis to randomly choose a number between min and max
+function getRandomX(min, max) {
     return Math.random() * (max - min) + min;
 }
-
-let random_X = getRandomCoord(-screenX, screenX);
-let random_Y = getRandomCoord(-screenY, screenY);
-
-function move_last() {
-    let last_id = document.getElementById(`last_id`);
-
-    last_id.style.transform = `translate(${random_X}px,${random_Y}px)`;
+function getRandomY(min, max) {
+    return Math.random() * (max - min) + min;
 }
-
-
-
+//creating a function to transform using random XY axis with max input as window innerWidth and Height
+function move_last() {
+    last_id.style.transform = `translate(${getRandomX(0, window.innerWidth)}px,${getRandomY(0, window.innerHeight)}px)`;
+}
+//setting a timing interval for move_last to execute every 3 seconds
 setInterval(move_last, 3000);
